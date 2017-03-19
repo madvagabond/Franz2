@@ -8,7 +8,9 @@ utils.makeServer(addr)
 
 //create publish and subscribe. 
 def f(n: Int)(x: String) = println(s" $x #$n")
+
 client.createTopic(addr, "boing")
+
 (1 to 10) foreach { x => client.subscribe(addr, "boing")(f(x)) }
 (1 to 1000).foreach {_ => client.publish(addr, "boing", "gratatata")}
 
