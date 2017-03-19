@@ -46,4 +46,12 @@ object utils {
     val nl = l.keySet.toList
     nl(r.nextInt(nl.size))
   }
+  def joinCluster(addr: String, bootstrapHost: String) = {
+    import client._
+    import com.twitter.util.FuturePool
+    val j = sendMessage(bootstrapHost)(FranzRequest("Join Cluster", Map("address" -> addr)))
+    val peers = j.get.parseJson.convertTo[List[String]]
+    peers.foreach {x => sendMessage(x)(FranzRequest("New Member Broadcast", Map("address"-> addr)))}
+    clusteredFranz(addr, peers)
+  }
 }
