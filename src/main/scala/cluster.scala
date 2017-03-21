@@ -16,7 +16,7 @@ class clusterMode[FranzRequest, String](peers: membership) extends SimpleFilter[
     val res = req match {
       case FranzRequest("Join Cluster", args) => Future{peers.peerSet.toList.toJson.toString}
       case FranzRequest("New Member Broadcast", args) if args.contains("address") =>
-        synchronized {peers.peerSet :+ args.get("address").get}
+        synchronized {peers.peerSet += args.get("address").get}
         Future{"Added"}
       case FranzRequest(cmd, args) if args.contains("topic") =>
         val peer = getMember(peers.peerSet.toList, args.get("topic").get)
