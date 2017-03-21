@@ -3,13 +3,18 @@ A new and improved version of Franz using Finagle. The aformentioned improvement
 
 Tutorial 
 //installation 
+
 //requires sbt 
+
 git clone https://github.com/XnuKernPoll/Franz2
+
 cd ./franz2 
+
 sbt publish-local 
 
 // add dependency 
 in your build.sbt 
+
 libraryDependencies += "com.franz" % "franz2_2.10" % "0.1-SNAPSHOT"
 
 //start server 
