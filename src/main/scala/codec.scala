@@ -1,3 +1,4 @@
+package com.franz.franz2
 import spray.json._
 import DefaultJsonProtocol._
 import org.jboss.netty.buffer._
