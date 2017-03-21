@@ -18,6 +18,7 @@ in your build.sbt
 libraryDependencies += "com.franz" % "franz2_2.10" % "0.1-SNAPSHOT"
 
 //start server 
+
 import com.franz.franz2._
 
 val addr = "127.0.0.1:3000"
