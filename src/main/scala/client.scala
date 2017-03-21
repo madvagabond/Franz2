@@ -1,3 +1,4 @@
+package com.franz.franz2
 import com.twitter.finagle._
 import com.twitter.util._
 import com.twitter.finagle.builder._
