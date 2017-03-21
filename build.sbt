@@ -1,3 +1,7 @@
+organization := "com.franz"
+
+name := "franz2"
+  
 libraryDependencies += "com.twitter" % "finagle-core_2.10" % "6.35.0"
 
 libraryDependencies += "io.spray" %%  "spray-json" % "1.3.3"
