@@ -2,7 +2,18 @@
 A new and improved version of Franz using Finagle. The aformentioned improvements include deliveree gaurentees, cluster support, an asynchronous client, and it is written in a more functional style. 
 
 Tutorial 
+//installation 
+//requires sbt 
+git clone https://github.com/XnuKernPoll/Franz2
+cd ./franz2 
+sbt publish-local 
+
+// add dependency 
+in your build.sbt 
+libraryDependencies += "com.franz" % "franz2_2.10" % "0.1-SNAPSHOT"
+
 //start server 
+import com.franz.franz2._
 
 val addr = "127.0.0.1:3000"
 
